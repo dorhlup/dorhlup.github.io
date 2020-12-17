@@ -87,6 +87,7 @@ document.querySelectorAll('input').forEach(input => {
     input.select();
   });
   input.addEventListener('input', e => {
+    input.blur();
     if([...document.querySelectorAll('input')].map(i => i.value).join('') == '353965') {
       alert('correct');
     }
