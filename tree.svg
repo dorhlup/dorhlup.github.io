@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="562" width="422" version="1.1" viewBox="0 0 421.92789 562.20044">
+ <g stroke-width="3" stroke="#000" transform="translate(3)">
+  <path fill-rule="evenodd" fill="#520" d="m179 470v81c12 13 48 13 59 0l-1-83z"/>
+  <g stroke-linejoin="round" stroke-linecap="round">
+   <path fill-rule="evenodd" fill="#008000" d="m206 51.8c-11 21.6-25 34.2-37 39.5 11 5.8 19 4.3 19 8.6-4 20.1-35 39.1-56 47.1 11 9 30 1 31 15 0 11-41 40-60 47 9 7 22 14 43 16-14 20-29 35-64 43 21 7 27 25 43 22-7 16-31.8 40-63.9 49 3.6 3 7.2 5 10.3 6-3.1 1-5.6 3-7.9 5 13.5 5 25.1 5 36.5 4-18.7 30-44.7 50-76.7 63 6.6 5 18.2 5 29.4 6-6.8 4-14.8 7-23.4 9 9.2 3 18.8 4 28 4-4.8 3-11.8 5-16.7 6 2.7 3 5.7 6 10.2 6-14 13-31.5 22-49.3 25 7.17 9 21.1 10 35.6 8-2.2 4-5.1 7-8.1 8 5.7 3 11.1 3 16.3 2-2.8 6-9.6 3-14.4 8 31.9 17 48.5-4 69.1 10-2.6 4-5.2 6-9.7 7 26.7 10 40.7-5 64.7 3-2 5-5 7-9 11 23 4 32-9 47-15 5 9 10 15 20 20 0-9 1-17 4-24 7 8 23 16 34 20 0-5-1-10 0-15 12 6 27 9 45 7-1-2-2-4-2-6 7 2 12-1 18-4 13 0 27-1 42-3-3-2-7-6-10-10 23 1 39-5 43-12-8-1-14 0-19-5 7-1 12-3 15-8-4 0-9-2-13-4 11-5 28 2 44-19-15 1-27-2-38-5 14 1 26-2 35-11-26 0-46-5-58-19 7-4 15-1 21-7-10-2-21-7-28-14 5-1 11-1 17 0-4-3-8-5-12-7 13 0 22-6 30-15-29-2-53-13-64-28 6 0 13 0 20-1-5-4-9-8-12-13 11 0 25-2 34-7-28-8-51-21-66-40 4-1 9-2 14-2-3-2-6-5-7-9 6 0 11-4 12-10 7 1 12-2 16-10 2-1 4-2 5-4-25-6-49-24-64-43 26 4 25-22 38-27-20-4-38-7-55-24 5-1 8-4 10-6 9 1 17-2 22-5-21-8-48-22-56-46.3-1-4.4 12-2.9 17-8.8-17-4.7-29-21.8-39-38.1z"/>
+   <rect stroke-dashoffset=".650" ry="5.23" height="15.7" width="14" y="249" x="160" fill="#ffd700"/>
+   <circle stroke-dashoffset=".650" cy="276" cx="167" r="19.5" fill="#eebc10"/>
+  </g>
+ </g>
+ <g stroke-linejoin="round" transform="translate(3)" stroke-linecap="round" stroke-width="3">
+  <g stroke-dashoffset=".650">
+   <path d="m180-275a10.9 10.9 0 0 1 -11 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="343" x="163" fill="#ffff41"/>
+   <circle stroke="#000" cy="371" cx="170" r="19.5" fill="#ff0"/>
+   <path d="m183-369a10.9 10.9 0 0 1 -10 10" transform="scale(1,-1)" stroke="#ffff41" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="367" x="262" fill="#ffd700"/>
+   <circle stroke="#000" cy="395" cx="269" r="19.5" fill="#eebc10"/>
+   <path d="m282-394a10.9 10.9 0 0 1 -11 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="288" x="246" fill="#ffd700"/>
+   <circle stroke="#000" cy="315" cx="253" r="19.5" fill="#eebc10"/>
+   <path d="m266-314a10.9 10.9 0 0 1 -10 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="201" x="233" fill="#ffd700"/>
+   <circle stroke="#000" cy="229" cx="240" r="19.5" fill="#eebc10"/>
+   <path d="m253-228a10.9 10.9 0 0 1 -11 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="402" x="89.1" fill="#ffd700"/>
+   <circle stroke="#000" cy="429" cx="96.1" r="19.5" fill="#eebc10"/>
+   <path d="m109-428a10.9 10.9 0 0 1 -10.5 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="446" x="195" fill="#ffd700"/>
+   <circle stroke="#000" cy="474" cx="202" r="19.5" fill="#eebc10"/>
+   <path d="m215-472a10.9 10.9 0 0 1 -10 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="442" x="312" fill="#ffd700"/>
+   <circle stroke="#000" cy="470" cx="318" r="19.5" fill="#eebc10"/>
+   <path d="m331-469a10.9 10.9 0 0 1 -10 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+   <rect ry="5.23" height="15.7" width="14" stroke="#000" y="143" x="183" fill="#ffd700"/>
+   <circle stroke="#000" cy="170" cx="190" r="19.5" fill="#eebc10"/>
+   <path d="m203-169a10.9 10.9 0 0 1 -10 11" transform="scale(1,-1)" stroke="#ffd700" fill="none"/>
+  </g>
+  <path d="m203 39.1-7 24.9c6 3.9 15 3.5 21-0.6l-8-24.3z" fill-rule="evenodd" stroke="#000" fill="#eebc10"/>
+  <path d="m206 1.5 7 19.5 21 0.8-16 12.9 6 20-18-11.5-17 11.5 6-20-17-12.9 21-0.8z" stroke-dashoffset=".650" stroke="#000" fill="#eebc10"/>
+ </g>
+</svg>

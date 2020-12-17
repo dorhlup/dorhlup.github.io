@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Christmas Treasure Hunt</title>
-    <link rel="shortcut icon" href="/favicon.ico"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Christmas Treasure Hunt</title>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #89a02c;
+  text-align: center;
+}
+img {
+  height: 20rem;
+  width: 15rem;
+  margin-bottom: 1rem;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.code {
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  background: #b62;
+  padding: 0.5rem 1rem;
+}
+input {
+  appearance: none;
+  border: 4px solid;
+  background: white;
+  font: 2rem sans-serif;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  margin: 0.25rem;
+}
+button {
+  appearance: none;
+  border: 0;
+  background: url(present.svg) center / cover;
+  width: 6rem;
+  height: 6rem;
+  font: 2.5rem sans-serif;
+  padding: 3rem 0 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+button:hover {
+  transform: translateY(-0.25rem);
+}
+  </style>
 </head>
 <body>
-    <h1>Christmas Treasure Hunt!</h1>
+  <img src="tree.svg"/>
+  <br/>
+  <div class="center">
+    <div class="code">
+      <input inputmode="numeric" style="border-color:blue;"/>
+      <input inputmode="numeric" style="border-color:yellow;"/>
+      <input inputmode="numeric" style="border-color:#0a0;"/>
+      <input inputmode="numeric" style="border-color:red;"/>
+      <input inputmode="numeric" style="border-color:#f0c;"/>
+      <input inputmode="numeric" style="border-color:#f70;"/>
+    </div>
+  </div>
+  <br/>
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+  <button>6</button>
+  <script>
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', e => {
+    alert(button.textContent);
+  });
+});
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('input', e => {
+    if([...document.querySelectorAll('input')].map(i => i.value).join('') == '353965') {
+      alert('correct');
+    }
+  });
+});
+  </script>
 </body>
 </html>
