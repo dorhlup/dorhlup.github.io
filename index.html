@@ -296,9 +296,6 @@ inputs.forEach(input => {
     input.select();
   });
   input.addEventListener('input', e => {
-    if (input.value) {
-      input.blur();
-    }
     evaluate();
   });
 });
