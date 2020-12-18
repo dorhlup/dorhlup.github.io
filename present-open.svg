@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="188" width="168" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 167.24862 187.98569">
+ <g stroke-linejoin="round" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-width="3" fill="#f00">
+  <path d="m56.4 145 20.5 1-6.9 10 20.3-2 6.3 11-74.1 2-1.4-24 45.8-8z"/>
+  <path d="m146 137-8 28h-56.1c-3.8 0 23.1-10 23.1-10l-4-4 17-8-2-7z"/>
+  <path d="m3.01 127 14.7 24 52.3-19-14-3 1.1-13-12.4 3-11.3-1z"/>
+  <path d="m118 122 46 9-9 18-49-11 19-4-10-3 5-4z"/>
+ </g>
+ <g stroke-linejoin="round" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-width="3">
+  <path d="m32.6 104c-9.6 1-14.7 17-10 21 8.7 6 28.4 2 35.8 0-8.8-3-19.1-21-25.8-21zm1.4 10c3.2-1 7.3 4 11.8 8-7.3 1-13.4 2-15.4-1-1.1-2 1-6 3.6-7z" fill="#00f"/>
+  <path d="m94.7 133c6.3 5 4.6 19-2.7 20-10.1 2-24.2-17-29.6-26 13 6 22.3-1 32.3 6zm-5.4 6c-2.8-3-8.4-3-11.7-2 2 3 5.7 9 9.4 9 2.4 0 4.1-5 2.3-7z" fill="#00f"/>
+  <path d="m53.4 122c-13 5-23.2 13-31 22-6.7 8-8.3 17-10.7 24 5.1 0 12.6 2 16.9 5-4.2-9-6.3-18 0.5-27 4.2-6 13.6-15 25.9-19z" fill="#0000fd"/>
+  <path d="m66 127c8.9 10 18.7 24 30.2 37-6.2 0-10.2 1-14.6 4 0 0-0.5-10-2.7-15-3.1-8-11.5-17-15.8-23z" fill="#00f"/>
+  <path d="m53.3 129c-2.4-2-1.1-6-0.5-8 5.6-2 9 6 14 5 1.6 2 0 5-0.7 8-6 3-8.5-5-12.8-5z" fill="#00f"/>
+ </g>
+</svg>

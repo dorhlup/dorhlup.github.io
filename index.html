@@ -54,6 +54,10 @@ button {
 button:hover {
   transform: translateY(-0.25rem);
 }
+button.open {
+  color: transparent;
+  background-image: url(present-open.svg);
+}
   </style>
 </head>
 <body>
@@ -61,12 +65,12 @@ button:hover {
   <br/>
   <div class="center">
     <div class="code">
-      <input inputmode="numeric" maxlength="1" style="border-color:blue;"/>
-      <input inputmode="numeric" maxlength="1" style="border-color:yellow;"/>
-      <input inputmode="numeric" maxlength="1" style="border-color:#0a0;"/>
-      <input inputmode="numeric" maxlength="1" style="border-color:red;"/>
-      <input inputmode="numeric" maxlength="1" style="border-color:#f0c;"/>
-      <input inputmode="numeric" maxlength="1" style="border-color:#f70;"/>
+      <input data-answer="3" data-question="1" inputmode="numeric" maxlength="1" style="border-color:blue;"/>
+      <input data-answer="5" data-question="2" inputmode="numeric" maxlength="1" style="border-color:yellow;"/>
+      <input data-answer="3" data-question="3" inputmode="numeric" maxlength="1" style="border-color:#0a0;"/>
+      <input data-answer="9" data-question="4" inputmode="numeric" maxlength="1" style="border-color:red;"/>
+      <input data-answer="6" data-question="5" inputmode="numeric" maxlength="1" style="border-color:#f0c;"/>
+      <input data-answer="5" data-question="6" inputmode="numeric" maxlength="1" style="border-color:#f70;"/>
     </div>
   </div>
   <br/>
@@ -77,22 +81,39 @@ button:hover {
   <button>5</button>
   <button>6</button>
   <script>
-document.querySelectorAll('button').forEach(button => {
+let buttons = [...document.querySelectorAll('button')];
+let inputs = [...document.querySelectorAll('input')];
+function evaluate() {
+  inputs.forEach(input => {
+    buttons.forEach(button => {
+      if ((button.textContent.trim() == input.getAttribute('data-question'))) {
+        if (input.value == input.getAttribute('data-answer')) {
+          button.classList.add('open');
+        } else {
+          button.classList.remove('open');
+        }
+      }
+    });
+  });
+  if (inputs.map(i => i.value).join('') == '353965') {
+    alert('correct');
+  }
+}
+buttons.forEach(button => {
   button.addEventListener('click', e => {
-    alert(button.textContent);
+    alert(button.textContent.trim());
   });
 });
-document.querySelectorAll('input').forEach(input => {
+inputs.forEach(input => {
   input.addEventListener('focus', e => {
     input.select();
   });
   input.addEventListener('input', e => {
     input.blur();
-    if([...document.querySelectorAll('input')].map(i => i.value).join('') == '353965') {
-      alert('correct');
-    }
+    evaluate();
   });
 });
+evaluate();
   </script>
 </body>
 </html>
