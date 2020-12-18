@@ -12,8 +12,9 @@
 body {
   background: #89a02c;
   text-align: center;
+  font-family: sans-serif;
 }
-img {
+.tree {
   height: 20rem;
   width: 15rem;
   margin-bottom: 1rem;
@@ -29,7 +30,7 @@ img {
   background: #b62;
   padding: 0.5rem 1rem;
 }
-input {
+.code input {
   appearance: none;
   border: 4px solid;
   border-radius: 0;
@@ -41,7 +42,7 @@ input {
   margin: 0.25rem;
   padding: 0;
 }
-button {
+.buttons button {
   appearance: none;
   border: 0;
   background: url(present.svg) center / cover;
@@ -51,25 +52,110 @@ button {
   padding: 3rem 0 0;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin-top: 1rem;
 }
-button:hover {
+.buttons button:hover {
   transform: translateY(-0.25rem);
 }
-button.open {
+.buttons button.open {
   color: transparent;
   background-image: url(present-open.svg);
   pointer-events: none;
 }
-button.gold {
+.buttons button.gold {
   background-image: url(present-gold.svg);
 }
-button.hidden {
+.buttons button.hidden {
+  display: none;
+}
+.dialog {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: #0007;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dialog.hidden {
+  display: none;
+}
+.dialog form {
+  background: green;
+  box-shadow: 0.5rem 0.5rem 0.5rem #0007;
+  border-radius: 0.25rem;
+  padding: 3rem 1.5rem 1rem;
+  margin: 1rem;
+  max-width: 30rem;
+  max-height: calc(100vh - 3rem);
+  position: relative;
+  font-weight: bold;
+}
+.dialog form button {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.dialog form button:hover {
+  transform: translateY(-0.25rem);
+}
+.dialog form button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.dialog form button[type=submit] {
+  background: #0a0;
+  font: bold 1rem sans-serif;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  width: 5rem;
+}
+.dialog form button[type=button] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.75rem 0.5rem;
+  padding: 0;
+}
+.dialog form button[type=button]:hover {
+  transform: translateY(-0.125rem);
+}
+.dialog form p {
+  margin: 0 0 1rem;
+}
+.dialog form p.error {
+  margin: 0.5rem 0;
+  color: red;
+  text-shadow: 0 0 2rem black;
+}
+.dialog form input {
+  appearance: none;
+  border: 0;
+  background: white;
+  margin: 0 0.25rem 0.5rem 0;
+  padding: 0.5rem;
+  width: calc(100% - 5.75rem);
+  min-width: 10rem;
+}
+.dialog .clue {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: calc(100vh - 7rem);
+  background: no-repeat center / contain;
+}
+.dialog .clue img {
+  width: 100%;
+  height: 100%;
+}
+.dialog form .hidden {
   display: none;
 }
   </style>
 </head>
 <body>
-  <img src="tree.svg"/>
+  <img src="tree.svg" class="tree"/>
   <br/>
   <div class="center">
     <div class="code">
@@ -81,18 +167,105 @@ button.hidden {
       <input data-answer="5" data-question="6" inputmode="numeric" maxlength="1" style="border-color:#f70;"/>
     </div>
   </div>
-  <br/>
-  <button>1</button>
-  <button>2</button>
-  <button>3</button>
-  <button>4</button>
-  <button>5</button>
-  <button>6</button>
-  <button class="gold hidden">7</button>
-  <button class="gold hidden">8</button>
+  <div class="buttons">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button class="gold hidden">7</button>
+    <button class="gold hidden">8</button>
+  </div>
+  <div class="dialog hidden" data-question="1" data-answer="">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="content">
+        <p>Why is a raven like a writing desk?</p>
+        <input/>
+        <button type="submit">Sumbit</button>
+        <p class="error hidden">Sorry, try again.</p>
+      </div>
+      <div class="clue hidden" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="2" data-answer="">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="content">
+        <p>Why is a raven like a writing desk?</p>
+        <input/>
+        <button type="submit">Sumbit</button>
+        <p class="error hidden">Sorry, try again.</p>
+      </div>
+      <div class="clue hidden" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="3" data-answer="">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="content">
+        <p>Why is a raven like a writing desk?</p>
+        <input/>
+        <button type="submit">Sumbit</button>
+        <p class="error hidden">Sorry, try again.</p>
+      </div>
+      <div class="clue hidden" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="4" data-answer="">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="content">
+        <p>Why is a raven like a writing desk?</p>
+        <input/>
+        <button type="submit">Sumbit</button>
+        <p class="error hidden">Sorry, try again.</p>
+      </div>
+      <div class="clue hidden" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="5" data-answer="">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="content">
+        <p>Why is a raven like a writing desk?</p>
+        <input/>
+        <button type="submit">Sumbit</button>
+        <p class="error hidden">Sorry, try again.</p>
+      </div>
+      <div class="clue hidden" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="6" data-answer="">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="content">
+        <p>Why is a raven like a writing desk?</p>
+        <input/>
+        <button type="submit">Sumbit</button>
+        <p class="error hidden">Sorry, try again.</p>
+      </div>
+      <div class="clue hidden" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="7">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <span style="font: bold 6rem sans-serif; color: black">6</span>
+      <span style="font: bold 6rem sans-serif; color: white">3</span>
+    </form>
+  </div>
+  <div class="dialog hidden" data-question="8">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <div class="clue" style="background-image:url(clue-8.png)"></div>
+    </form>
+  </div>
   <script>
-let buttons = [...document.querySelectorAll('button')];
-let inputs = [...document.querySelectorAll('input')];
+let buttons = [...document.querySelectorAll('.buttons button')];
+let inputs = [...document.querySelectorAll('.code input')];
+let dialogs = [...document.querySelectorAll('.dialog')];
 function evaluate() {
   inputs.forEach(input => {
     buttons.forEach(button => {
@@ -113,7 +286,7 @@ function evaluate() {
 }
 buttons.forEach(button => {
   button.addEventListener('click', e => {
-    alert(button.textContent.trim());
+    document.querySelector(`.dialog[data-question="${button.textContent.trim()}"]`)?.classList.remove('hidden');
   });
 });
 inputs.forEach(input => {
@@ -121,8 +294,32 @@ inputs.forEach(input => {
     input.select();
   });
   input.addEventListener('input', e => {
-    input.blur();
+    if (input.value) {
+      input.blur();
+    }
     evaluate();
+  });
+});
+dialogs.forEach(dialog => {
+  let form = dialog.querySelector('form');
+  dialog.addEventListener('click', e => {
+    dialog.classList.add('hidden');
+  });
+  form.querySelector('button[type=button]').addEventListener('click', e => {
+    dialog.classList.add('hidden');
+  });
+  form.addEventListener('click', e => {
+    e.stopPropagation();
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (form.querySelector('input').value.trim() == dialog.getAttribute('data-answer')) {
+      form.querySelector('.error').classList.add('hidden');
+      form.querySelector('.content').classList.add('hidden');
+      form.querySelector('.clue').classList.remove('hidden');
+    } else {
+      form.querySelector('.error').classList.remove('hidden');
+    }
   });
 });
 evaluate();
