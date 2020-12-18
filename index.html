@@ -479,7 +479,11 @@ inputs.forEach(input => {
 });
 buttons.forEach(button => {
   button.addEventListener('click', e => {
-    document.querySelector(`.selector[data-question="${button.textContent.trim()}"]`)?.classList.remove('hidden');
+    if (['7','8'].includes(button.textContent.trim())) {
+      document.querySelector(`.dialog[data-question="${button.textContent.trim()}"]`)?.classList.remove('hidden');
+    } else {
+      document.querySelector(`.selector[data-question="${button.textContent.trim()}"]`)?.classList.remove('hidden');
+    }
   });
 });
 selectors.forEach(selector => {
