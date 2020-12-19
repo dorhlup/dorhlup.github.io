@@ -202,14 +202,14 @@ body {
     </div>
   </div>
   <div class="buttons">
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button class="gold hidden">7</button>
-    <button class="gold hidden">8</button>
+    <button data-question="1">1</button>
+    <button data-question="2">2</button>
+    <button data-question="3">3</button>
+    <button data-question="4">4</button>
+    <button data-question="5">5</button>
+    <button data-question="6">6</button>
+    <button data-question="7" class="gold hidden">7</button>
+    <button data-question="8" class="gold hidden">8</button>
   </div>
   <div class="dialog hidden" data-question="1i" data-answer="">
     <form>
@@ -454,19 +454,31 @@ let selectors = [...document.querySelectorAll('.selector')];
 function evaluate() {
   inputs.forEach(input => {
     buttons.forEach(button => {
-      if ((button.textContent.trim() == input.getAttribute('data-question'))) {
+      if ((button.getAttribute('data-question') == input.getAttribute('data-question'))) {
         if (input.value == input.getAttribute('data-answer')) {
-          button.classList.add('open');
+          // button.classList.add('open');
         } else {
-          button.classList.remove('open');
+          // button.classList.remove('open');
         }
       }
     });
   });
   if (inputs.map(i => i.value).join('') == '365593') {
-    buttons.forEach(button => button.classList.remove('hidden'));
+    buttons.forEach(button => {
+      if (button.classList.contains('gold')) {
+        button.classList.remove('hidden');
+      } else {
+        button.classList.add('open');
+      }
+    });
   } else {
-    document.querySelectorAll('button.gold').forEach(button => button.classList.add('hidden'));
+    buttons.forEach(button => {
+      if (button.classList.contains('gold')) {
+        button.classList.add('hidden');
+      } else {
+        button.classList.remove('open');
+      }
+    });
   }
 }
 inputs.forEach(input => {
@@ -479,10 +491,10 @@ inputs.forEach(input => {
 });
 buttons.forEach(button => {
   button.addEventListener('click', e => {
-    if (['7','8'].includes(button.textContent.trim())) {
-      document.querySelector(`.dialog[data-question="${button.textContent.trim()}"]`)?.classList.remove('hidden');
+    if (button.classList.contains('gold')) {
+      document.querySelector(`.dialog[data-question="${button.getAttribute('data-question')}"]`)?.classList.remove('hidden');
     } else {
-      document.querySelector(`.selector[data-question="${button.textContent.trim()}"]`)?.classList.remove('hidden');
+      document.querySelector(`.selector[data-question="${button.getAttribute('data-question')}"]`)?.classList.remove('hidden');
     }
   });
 });
