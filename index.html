@@ -42,6 +42,12 @@ body {
   margin: 0.25rem;
   padding: 0;
 }
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .buttons button {
   appearance: none;
   border: 0;
@@ -202,14 +208,14 @@ body {
     </div>
   </div>
   <div class="buttons">
-    <button data-question="1">1</button>
-    <button data-question="2">2</button>
-    <button data-question="3">3</button>
-    <button data-question="4">4</button>
-    <button data-question="5">5</button>
-    <button data-question="6">6</button>
-    <button data-question="7" class="gold hidden">7</button>
-    <button data-question="8" class="gold hidden">8</button>
+    <button data-question="1" style="font-size:1.5rem">Love</button>
+    <button data-question="2" style="font-size:1rem">Serenity</button>
+    <button data-question="3" style="font-size:1.75rem">Joy</button>
+    <button data-question="4" style="font-size:1.75rem">Awe</button>
+    <button data-question="5" style="font-size:1rem">Interest</button>
+    <button data-question="6" style="font-size:0.6rem">Forgiveness</button>
+    <button data-question="7" style="font-size:1.5rem" class="gold hidden">Hope</button>
+    <button data-question="8" style="font-size:0.9rem" class="gold hidden">Success</button>
   </div>
   <div class="dialog hidden" data-question="1i" data-answer="">
     <form>
