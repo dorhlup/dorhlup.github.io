@@ -135,6 +135,12 @@ body {
   color: red;
   text-shadow: 0 0 2rem black;
 }
+.dialog form img {
+  max-width: 27rem;
+  /* max-width: calc(100vw - 4rem); */
+  max-height: calc(100vh - 10rem);
+  margin-bottom: 1rem;
+}
 .dialog form input {
   appearance: none;
   border: 0;
@@ -145,6 +151,8 @@ body {
   width: calc(100% - 5.75rem);
   min-width: 10rem;
   height: 2rem;
+  font: bold 1rem sans-serif;
+  text-transform: uppercase;
 }
 .dialog .clue {
   width: 27rem;
@@ -217,11 +225,12 @@ body {
     <button data-question="7" style="font-size:1.5rem" class="gold hidden">Hope</button>
     <button data-question="8" style="font-size:0.9rem" class="gold hidden">Success</button>
   </div>
-  <div class="dialog hidden" data-question="1i" data-answer="">
+  <div class="dialog hidden" data-question="1i" data-answer="wombat">
     <form>
       <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
       <div class="content">
-        <p>Why is a raven like a writing desk?</p>
+        <p>What animal is this?</p>
+        <img src="q1i.jpg"/>
         <input/>
         <button type="submit">Sumbit</button>
         <p class="error hidden">Sorry, try again.</p>
@@ -253,11 +262,12 @@ body {
       <div class="clue hidden" style="background-image:url(clue-1iii.jpg)"></div>
     </form>
   </div>
-  <div class="dialog hidden" data-question="2i" data-answer="">
+  <div class="dialog hidden" data-question="2i" data-answer="glass frog">
     <form>
       <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
       <div class="content">
-        <p>Why is a raven like a writing desk?</p>
+        <p>What animal is this?</p>
+        <img src="q2i.webp"/>
         <input/>
         <button type="submit">Sumbit</button>
         <p class="error hidden">Sorry, try again.</p>
@@ -289,11 +299,12 @@ body {
       <div class="clue hidden" style="background-image:url(clue-2iii.jpg)"></div>
     </form>
   </div>
-  <div class="dialog hidden" data-question="3i" data-answer="">
+  <div class="dialog hidden" data-question="3i" data-answer="mantis shrimp">
     <form>
       <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
       <div class="content">
-        <p>Why is a raven like a writing desk?</p>
+        <p>What animal is this?</p>
+        <img src="q3i.webp"/>
         <input/>
         <button type="submit">Sumbit</button>
         <p class="error hidden">Sorry, try again.</p>
@@ -325,11 +336,12 @@ body {
       <div class="clue hidden" style="background-image:url(clue-3iii.jpg)"></div>
     </form>
   </div>
-  <div class="dialog hidden" data-question="4i" data-answer="">
+  <div class="dialog hidden" data-question="4i" data-answer="saiga antelope">
     <form>
       <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
       <div class="content">
-        <p>Why is a raven like a writing desk?</p>
+        <p>What animal is this?</p>
+        <img src="q4i.webp"/>
         <input/>
         <button type="submit">Sumbit</button>
         <p class="error hidden">Sorry, try again.</p>
@@ -361,11 +373,12 @@ body {
       <div class="clue hidden" style="background-image:url(clue-4iii.jpg)"></div>
     </form>
   </div>
-  <div class="dialog hidden" data-question="5i" data-answer="">
+  <div class="dialog hidden" data-question="5i" data-answer="okapi">
     <form>
       <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
       <div class="content">
-        <p>Why is a raven like a writing desk?</p>
+        <p>What animal is this?</p>
+        <img src="q5i.webp"/>
         <input/>
         <button type="submit">Sumbit</button>
         <p class="error hidden">Sorry, try again.</p>
@@ -397,11 +410,12 @@ body {
       <div class="clue hidden" style="background-image:url(clue-5iii.jpg)"></div>
     </form>
   </div>
-  <div class="dialog hidden" data-question="6i" data-answer="">
+  <div class="dialog hidden" data-question="6i" data-answer="mexican mole lizard">
     <form>
       <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
       <div class="content">
-        <p>Why is a raven like a writing desk?</p>
+        <p>What animal is this?</p>
+        <img src="q6i.webp"/>
         <input/>
         <button type="submit">Sumbit</button>
         <p class="error hidden">Sorry, try again.</p>
@@ -529,7 +543,7 @@ dialogs.forEach(dialog => {
   });
   form.addEventListener('submit', e => {
     e.preventDefault();
-    if (form.querySelector('input').value.trim() == dialog.getAttribute('data-answer')) {
+    if (form.querySelector('input').value.trim().toUpperCase() == dialog.getAttribute('data-answer').toUpperCase()) {
       form.querySelector('.error').classList.add('hidden');
       form.querySelector('.content').classList.add('hidden');
       form.querySelector('.clue').classList.remove('hidden');
