@@ -71,6 +71,9 @@ body {
 .buttons button.gold {
   background-image: url(present-gold.svg);
 }
+.buttons button.grey {
+  background-image: url(present-grey.svg);
+}
 .buttons button.hidden {
   display: none;
 }
@@ -224,6 +227,7 @@ body {
     <button data-question="6" style="font-size:0.6rem">Forgiveness</button>
     <button data-question="7" style="font-size:1.5rem" class="gold hidden">Hope</button>
     <button data-question="8" style="font-size:0.9rem" class="gold hidden">Success</button>
+    <button data-question="9" style="font-size:1rem" class="grey hidden">Mystery</button>
   </div>
   <div class="dialog hidden" data-question="1i" data-answer="wombat">
     <form>
@@ -468,6 +472,12 @@ body {
       <div class="clue" style="background-image:url(clue-8.jpg)"></div>
     </form>
   </div>
+  <div class="dialog hidden" data-question="9">
+    <form>
+      <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6" width="16" height="16"><path d="M1 1 4 4M1 4 4 1" stroke="white" fill="none"/></svg></button>
+      <p>Sorry, try again.</p>
+    </form>
+  </div>
   <div class="selector hidden" data-question="1"><button>i</button><button>ii</button><button>iii</button></div>
   <div class="selector hidden" data-question="2"><button>i</button><button>ii</button><button>iii</button></div>
   <div class="selector hidden" data-question="3"><button>i</button><button>ii</button><button>iii</button></div>
@@ -482,11 +492,13 @@ let selectors = [...document.querySelectorAll('.selector')];
 function evaluate() {
   inputs.forEach(input => {
     buttons.forEach(button => {
-      if ((button.getAttribute('data-question') == input.getAttribute('data-question'))) {
-        if (input.value == input.getAttribute('data-answer')) {
-          // button.classList.add('open');
+      console.log(button.getAttribute('data-question'), input.getAttribute('data-question'), input.value)
+      if (button.getAttribute('data-question') == input.getAttribute('data-question')) {
+        // if (input.value == input.getAttribute('data-answer')) {
+        if (input.value.trim()) {
+          button.classList.add('open');
         } else {
-          // button.classList.remove('open');
+          button.classList.remove('open');
         }
       }
     });
@@ -495,16 +507,28 @@ function evaluate() {
     buttons.forEach(button => {
       if (button.classList.contains('gold')) {
         button.classList.remove('hidden');
+      } else if (button.classList.contains('grey')) {
+        button.classList.add('hidden');
       } else {
-        button.classList.add('open');
+        // button.classList.add('open');
+      }
+    });
+  } else if (inputs.map(i => i.value.trim()).join('').length == 6) {
+    buttons.forEach(button => {
+      if (button.classList.contains('grey')) {
+        button.classList.remove('hidden');
+      } else if (button.classList.contains('gold')) {
+        button.classList.add('hidden');
+      } else {
+        // button.classList.add('open');
       }
     });
   } else {
     buttons.forEach(button => {
-      if (button.classList.contains('gold')) {
+      if (button.classList.contains('gold') || button.classList.contains('grey')) {
         button.classList.add('hidden');
       } else {
-        button.classList.remove('open');
+        // button.classList.remove('open');
       }
     });
   }
@@ -519,7 +543,7 @@ inputs.forEach(input => {
 });
 buttons.forEach(button => {
   button.addEventListener('click', e => {
-    if (button.classList.contains('gold')) {
+    if (button.classList.contains('gold') || button.classList.contains('grey')) {
       document.querySelector(`.dialog[data-question="${button.getAttribute('data-question')}"]`)?.classList.remove('hidden');
     } else {
       document.querySelector(`.selector[data-question="${button.getAttribute('data-question')}"]`)?.classList.remove('hidden');
